@@ -1,24 +1,3 @@
-/**
- * Angular Dynamic Locale - 0.1.37
- * https://github.com/lgalfaso/angular-dynamic-locale
- * License: MIT
- */
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module unless amdModuleId is set
-    define([], function () {
-      return (factory());
-    });
-  } else if (typeof exports === 'object') {
-    // Node. Does not work with strict CommonJS, but
-    // only CommonJS-like environments that support module.exports,
-    // like Node.
-    module.exports = factory();
-  } else {
-    factory();
-  }
-}(this, function () {
-'use strict';
 angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
   function makeStateful($delegate) {
     $delegate.$stateful = true;
@@ -270,7 +249,3 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
     return $cacheFactory('tmh.dynamicLocales.store');
   }];
 }).run(['tmhDynamicLocale', angular.noop]);
-
-return 'tmh.dynamicLocale';
-
-}));
